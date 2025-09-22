@@ -1,3 +1,3 @@
-package com.archit.calendardaterangepicker.customviews
+package com.calendar.calendar.customviews
 
 class InvalidDateException(message: String) : IllegalArgumentException(message)

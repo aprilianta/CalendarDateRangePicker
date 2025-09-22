@@ -1,14 +1,13 @@
-package com.archit.calendardaterangepicker
+package com.archit.calendar
 
 import android.view.View
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.matcher.ViewMatchers
-import com.archit.calendardaterangepicker.R.id
-import com.archit.calendardaterangepicker.customviews.CustomDateView
+import io.github.aprilianta.calendar.R.id
+import com.calendar.calendar.customviews.CustomDateView
 import org.hamcrest.BaseMatcher
 import org.hamcrest.Description
-import org.hamcrest.Matcher
 import java.util.Calendar
 
 fun clickOnRightNavigationArrow(times: Int = 1) {

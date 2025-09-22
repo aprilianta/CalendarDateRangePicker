@@ -1,4 +1,4 @@
-package com.archit.calendardaterangepicker.customviews
+package com.calendar.calendar.customviews
 
 import android.content.Context
 import android.graphics.Typeface
@@ -12,10 +12,10 @@ import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
-import com.archit.calendardaterangepicker.R
-import com.archit.calendardaterangepicker.R.layout
-import com.archit.calendardaterangepicker.models.CalendarStyleAttrImpl
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes
+import io.github.aprilianta.calendar.R.*
+import com.calendar.calendar.models.CalendarStyleAttrImpl
+import com.calendar.calendar.models.CalendarStyleAttributes
+import io.github.aprilianta.calendar.R
 import java.text.DateFormatSymbols
 import java.util.Calendar
 import java.util.Locale

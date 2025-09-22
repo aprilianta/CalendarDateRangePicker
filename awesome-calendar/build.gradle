@@ -7,10 +7,10 @@ plugins {
 }
 
 group = "io.github.aprilianta"
-version = "2.0.1"
+version = "2.0.2"
 
 android {
-    namespace = "com.archit.calendardaterangepicker"
+    namespace = "io.github.aprilianta.calendar"
     compileSdkVersion 33
 
     defaultConfig {

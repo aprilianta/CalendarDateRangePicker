@@ -1,17 +1,19 @@
-package com.archit.calendardaterangepicker.models
+package com.calendar.calendar.models
 
 import android.content.Context
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
-import com.archit.calendardaterangepicker.R
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.Companion.DEFAULT_FIXED_DAYS_SELECTION
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
+import io.github.aprilianta.calendar.R.*
+import com.calendar.calendar.models.CalendarStyleAttributes.Companion.DEFAULT_FIXED_DAYS_SELECTION
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
+import io.github.aprilianta.calendar.R
 
-class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null) : CalendarStyleAttributes {
+class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null) :
+    CalendarStyleAttributes {
     override var fonts: Typeface? = null
     override var titleColor = ContextCompat.getColor(context, R.color.title_color)
         private set

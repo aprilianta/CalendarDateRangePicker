@@ -1,4 +1,4 @@
-package com.archit.calendardaterangepicker;
+package com.archit.calendar;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         final Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.archit.calendardaterangepickerdemo", appContext.getPackageName());
+        assertEquals("com.calendar.calendardaterangepickerdemo", appContext.getPackageName());
     }
 }

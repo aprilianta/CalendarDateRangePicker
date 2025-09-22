@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.archit.calendardaterangepickerdemo.MainActivity">
+    tools:context="com.calendar.calendardaterangepickerdemo.MainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvCalendar"
@@ -16,7 +16,7 @@
         android:layout_marginEnd="20dp"
         custom:cardCornerRadius="8dp">
 
-        <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+        <com.calendar.calendar.customviews.DateRangeCalendarView
             android:id="@+id/cdrvCalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
             app:show_today_circle="true"
             custom:week_offset="0">
 
-        </com.archit.calendardaterangepicker.customviews.DateRangeCalendarView>
+        </com.calendar.calendar.customviews.DateRangeCalendarView>
 
     </androidx.cardview.widget.CardView>
 

@@ -1,13 +1,13 @@
 package com.test.awesomecalendar
 
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager.DateSelectionState
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManagerImpl
-import com.archit.calendardaterangepicker.customviews.InvalidDateException
-import com.archit.calendardaterangepicker.customviews.isDateSame
-import com.archit.calendardaterangepicker.customviews.isMonthSame
-import com.archit.calendardaterangepicker.customviews.printDate
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes
+import com.calendar.calendar.customviews.CalendarDateRangeManager
+import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState
+import com.calendar.calendar.customviews.CalendarDateRangeManagerImpl
+import com.calendar.calendar.customviews.InvalidDateException
+import com.calendar.calendar.customviews.isDateSame
+import com.calendar.calendar.customviews.isMonthSame
+import com.calendar.calendar.customviews.printDate
+import com.calendar.calendar.models.CalendarStyleAttributes
 import io.mockk.every
 import io.mockk.mockk
 import java.util.Calendar

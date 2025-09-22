@@ -1,6 +1,6 @@
-package com.archit.calendardaterangepicker.customviews
+package com.calendar.calendar.customviews
 
-import com.archit.calendardaterangepicker.models.DateTiming
+import com.calendar.calendar.models.DateTiming
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

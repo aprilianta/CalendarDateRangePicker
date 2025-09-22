@@ -1,4 +1,4 @@
-package com.archit.calendardaterangepicker.customviews
+package com.calendar.calendar.customviews
 
 import android.content.Context
 import android.graphics.Color
@@ -12,19 +12,19 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
-import com.archit.calendardaterangepicker.R
-import com.archit.calendardaterangepicker.R.drawable
-import com.archit.calendardaterangepicker.customviews.DateView.DateState
-import com.archit.calendardaterangepicker.customviews.DateView.DateState.DISABLE
-import com.archit.calendardaterangepicker.customviews.DateView.DateState.END
-import com.archit.calendardaterangepicker.customviews.DateView.DateState.HIDDEN
-import com.archit.calendardaterangepicker.customviews.DateView.DateState.MIDDLE
-import com.archit.calendardaterangepicker.customviews.DateView.DateState.SELECTABLE
-import com.archit.calendardaterangepicker.customviews.DateView.DateState.START
-import com.archit.calendardaterangepicker.customviews.DateView.DateState.START_END_SAME
-import com.archit.calendardaterangepicker.customviews.DateView.OnDateClickListener
-import com.archit.calendardaterangepicker.models.CalendarStyleAttrImpl
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes
+import io.github.aprilianta.calendar.R.*
+import com.calendar.calendar.customviews.DateView.DateState
+import com.calendar.calendar.customviews.DateView.DateState.DISABLE
+import com.calendar.calendar.customviews.DateView.DateState.END
+import com.calendar.calendar.customviews.DateView.DateState.HIDDEN
+import com.calendar.calendar.customviews.DateView.DateState.MIDDLE
+import com.calendar.calendar.customviews.DateView.DateState.SELECTABLE
+import com.calendar.calendar.customviews.DateView.DateState.START
+import com.calendar.calendar.customviews.DateView.DateState.START_END_SAME
+import com.calendar.calendar.customviews.DateView.OnDateClickListener
+import com.calendar.calendar.models.CalendarStyleAttrImpl
+import com.calendar.calendar.models.CalendarStyleAttributes
+import io.github.aprilianta.calendar.R
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -88,7 +88,7 @@ class CustomDateView @JvmOverloads constructor(
     }
 
     override fun setDateStyleAttributes(attr: CalendarStyleAttributes) {
-        if (attr is com.archit.calendardaterangepicker.models.CalendarStyleAttrImpl) {
+        if (attr is CalendarStyleAttrImpl) {
             todayCircleColor = attr.todayCircleColor
             todayTextColor = attr.todayTextColor
         }

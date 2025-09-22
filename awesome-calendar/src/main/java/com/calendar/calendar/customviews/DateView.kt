@@ -1,8 +1,8 @@
-package com.archit.calendardaterangepicker.customviews
+package com.calendar.calendar.customviews
 
 import android.graphics.Typeface
 import android.view.View
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes
+import com.calendar.calendar.models.CalendarStyleAttributes
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

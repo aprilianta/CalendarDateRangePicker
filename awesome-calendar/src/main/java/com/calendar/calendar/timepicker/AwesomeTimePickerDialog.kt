@@ -1,4 +1,4 @@
-package com.archit.calendardaterangepicker.timepicker
+package com.calendar.calendar.timepicker
 
 import android.app.Dialog
 import android.content.Context
@@ -8,9 +8,9 @@ import android.view.Gravity
 import android.view.Window
 import android.view.WindowManager.LayoutParams
 import android.widget.TimePicker
-import com.archit.calendardaterangepicker.R.id
-import com.archit.calendardaterangepicker.R.layout
-import com.archit.calendardaterangepicker.customviews.CustomTextView
+import io.github.aprilianta.calendar.R.id
+import io.github.aprilianta.calendar.R.layout
+import com.calendar.calendar.customviews.CustomTextView
 import java.util.Calendar
 
 class AwesomeTimePickerDialog(

@@ -47,14 +47,14 @@ For Maven:
 <dependency>
     <groupId>io.github.aprilianta.CalendarDateRangePicker</groupId>
     <artifactId>awesome-calendar-todaycircle</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.2</version>
 </dependency>
 ```
 
 **Usage**
 ---------------
 ````xml
-<com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+<io.github.aprilianta.calendar.customviews.DateRangeCalendarView
              android:id="@+id/calendar"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
@@ -63,7 +63,7 @@ For Maven:
              custom:range_color="@color/range_color"
              custom:selected_date_circle_color="@color/selected_date_circle_color"
              custom:title_color="@color/calendar_header_title">
-</com.archit.calendardaterangepicker.customviews.DateRangeCalendarView>
+</oo.github.aprilianta.calendar.customviews.DateRangeCalendarView>
 ````
 
 

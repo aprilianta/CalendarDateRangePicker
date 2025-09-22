@@ -1,4 +1,4 @@
-package com.archit.calendardaterangepicker;
+package com.archit.calendar;
 
 import org.junit.Test;
 

@@ -1,18 +1,18 @@
-package com.archit.calendardaterangepicker.customviews
+package com.calendar.calendar.customviews
 
 import android.util.Log
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager.DateSelectionState
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager.DateSelectionState.IN_SELECTED_RANGE
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager.DateSelectionState.LAST_DATE
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager.DateSelectionState.START_DATE
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager.DateSelectionState.START_END_SAME
-import com.archit.calendardaterangepicker.customviews.CalendarDateRangeManager.DateSelectionState.UNKNOWN
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode.SINGLE
-import com.archit.calendardaterangepicker.models.DateTiming
+import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState
+import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.IN_SELECTED_RANGE
+import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.LAST_DATE
+import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.START_DATE
+import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.START_END_SAME
+import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.UNKNOWN
+import com.calendar.calendar.models.CalendarStyleAttributes
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.SINGLE
+import com.calendar.calendar.models.DateTiming
 import java.util.Calendar
 
 @Suppress("TooManyFunctions")

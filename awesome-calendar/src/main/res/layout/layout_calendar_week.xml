@@ -7,18 +7,18 @@
     android:minHeight="@dimen/weekRowMinHeight"
     android:orientation="horizontal">
 
-    <com.archit.calendardaterangepicker.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
+    <com.calendar.calendar.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
 
-    <com.archit.calendardaterangepicker.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
+    <com.calendar.calendar.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
 
-    <com.archit.calendardaterangepicker.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
+    <com.calendar.calendar.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
 
-    <com.archit.calendardaterangepicker.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
+    <com.calendar.calendar.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
 
-    <com.archit.calendardaterangepicker.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
+    <com.calendar.calendar.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
 
-    <com.archit.calendardaterangepicker.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
+    <com.calendar.calendar.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
 
-    <com.archit.calendardaterangepicker.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
+    <com.calendar.calendar.customviews.CustomDateView style="@style/ContainerDayOfWeek" />
 
 </LinearLayout>

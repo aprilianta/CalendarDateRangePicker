@@ -1,4 +1,4 @@
-package com.archit.calendardaterangepicker.customviews
+package com.calendar.calendar.customviews
 
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable

@@ -2,12 +2,12 @@ package com.test.awesomecalendar
 
 import android.content.Context
 import android.content.res.Resources
-import com.archit.calendardaterangepicker.models.CalendarStyleAttrImpl
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
-import com.archit.calendardaterangepicker.models.CalendarStyleAttributes.DateSelectionMode.SINGLE
-import com.archit.calendardaterangepicker.models.InvalidCalendarAttributeException
+import com.calendar.calendar.models.CalendarStyleAttrImpl
+import com.calendar.calendar.models.CalendarStyleAttributes
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
+import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.SINGLE
+import com.calendar.calendar.models.InvalidCalendarAttributeException
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Assert.assertEquals
