@@ -70,24 +70,28 @@ For Maven:
 **XML Attribute set**
 ------------------
 
-| Attribute                  | Type      | Desciption                         |
-| :------------------------- | --------- | ---------------------------------- |
-| title_color                | Color     | Title color                        |
-| week_color                 | Color     | Week text color                    |
-| range_color                | Color     | Date range color                   |
-| selected_date_circle_color | Color     | Selected date text circle color         |
-| selected_date_color        | Color     | Selected date text color                |
-| default_date_color         | Color     | Default date text color                 |
-| range_date_color           | Color     | Date text color when it falls into range |
-| disable_date_color         | Color     | Disable date color                 |
-| enable_time_selection      | Boolean   | true to enable time selection else false    |
-| text_size_title            | Dimension | Title size                         |
-| text_size_week             | Dimension | Week text size                     |
-| text_size_date             | Dimension | Date text size                     |
-| header_bg                  | Drawable  | Header background                  |
-| week_offset                | Dimension | To set week start day offset                  |
-| editable                   | Boolean   | When true user can edit. By default its value is true               |
-| date_selection_mode        | enum      | To set date selection from (FREE_RANGE, SINGLE, FIXED_RANGE)     |
+| Attribute                                 | Type      | Desciption                                            |
+|:------------------------------------------|-----------|-------------------------------------------------------|
+| title_color                               | Color     | Title color                                           |
+| week_color                                | Color     | Week text color                                       |
+| range_color                               | Color     | Date range color                                      |
+| selected_date_circle_color                | Color     | Selected date text circle color                       |
+| selected_date_color                       | Color     | Selected date text color                              |
+| default_date_color                        | Color     | Default date text color                               |
+| range_date_color                          | Color     | Date text color when it falls into range              |
+| disable_date_color                        | Color     | Disable date color                                    |
+| enable_time_selection                     | Boolean   | true to enable time selection else false              |
+| text_size_title                           | Dimension | Title size                                            |
+| text_size_week                            | Dimension | Week text size                                        |
+| text_size_date                            | Dimension | Date text size                                        |
+| header_bg                                 | Drawable  | Header background                                     |
+| week_offset                               | Dimension | To set week start day offset                          |
+| editable                                  | Boolean   | When true user can edit. By default its value is true |
+| show_today_circle                         | Boolean   | Default its value is true                             |
+| today_circle_color                        | Color     | Selected today circle color                           |
+| today_text_color                          | Color     | Selected today text color                             |
+
+| date_selection_mode        | enum      | To set date selection from (FREE_RANGE, SINGLE, FIXED_RANGE)    |
 
 
 **Set callbacks**

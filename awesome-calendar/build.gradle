@@ -3,8 +3,11 @@ plugins {
     id "kotlin-android"
     id "io.gitlab.arturbosch.detekt"
     id "org.jetbrains.kotlin.android"
-    //id "maven-publish"
+    id "maven-publish"
 }
+
+group = "io.github.aprilianta"
+version = "2.0.1"
 
 android {
     namespace = "com.archit.calendardaterangepicker"
@@ -38,6 +41,11 @@ android {
     kotlin {
         jvmToolchain(11)
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()               // sertakan sources.jar
+        }
+    }
 }
 
 dependencies {
@@ -61,8 +69,9 @@ dependencies {
 /*repositories {
     mavenCentral()
     mavenLocal()
-}
+}*/
 
+/*
 publishing {
     publications {
         release(MavenPublication) {
@@ -76,3 +85,36 @@ publishing {
         }
     }
 }*/
+
+afterEvaluate {
+    publishing {
+        publications {
+            create("release", MavenPublication) {
+                from components.release
+                artifactId = "awesome-calendar-todaycircle"
+                pom {
+                    name.set("awesome-calendar-todaycircle")
+                    description.set("Fork of Archit Calendar with Today Circle")
+                    url.set("https://github.com/aprilianta/CalendarDateRangePicker")
+                    licenses {
+                        license {
+                            name.set("Apache-2.0")
+                            url.set("https://www.apache.org/licenses/LICENSE-2.0")
+                        }
+                    }
+                    scm {
+                        url.set("https://github.com/aprilianta/CalendarDateRangePicker")
+                        connection.set("scm:git:git://github.com/aprilianta/CalendarDateRangePicker.git")
+                        developerConnection.set("scm:git:ssh://github.com/aprilianta/CalendarDateRangePicker.git")
+                    }
+                    developers {
+                        developer {
+                            id.set("aprilianta")
+                            name.set("Kevin Aprilianta")
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
