@@ -72,6 +72,8 @@ interface DateView {
 
     fun setDateClickListener(listener: OnDateClickListener)
 
+    fun setTodayDateCircle(date: String)
+
     companion object {
 
         fun getContainerKey(cal: Calendar): Long {

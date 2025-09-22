@@ -64,6 +64,8 @@ class CustomDateView @JvmOverloads constructor(
     override var selectedDateCircleColor: Int = defCalendarStyleAttr.selectedDateCircleColor
     override var selectedDateColor: Int = defCalendarStyleAttr.selectedDateColor
     override var rangeDateColor: Int = defCalendarStyleAttr.rangeDateColor
+    private var todayCircleColor: Int = defCalendarStyleAttr.selectedDateCircleColor
+    private var todayTextColor: Int = defCalendarStyleAttr.selectedDateColor
     override var stripColor: Int = defCalendarStyleAttr.rangeStripColor
 
     private val mViewClickListener = OnClickListener {
@@ -86,6 +88,10 @@ class CustomDateView @JvmOverloads constructor(
     }
 
     override fun setDateStyleAttributes(attr: CalendarStyleAttributes) {
+        if (attr is com.archit.calendardaterangepicker.models.CalendarStyleAttrImpl) {
+            todayCircleColor = attr.todayCircleColor
+            todayTextColor = attr.todayTextColor
+        }
         disableDateColor = attr.disableDateColor
         defaultDateColor = attr.defaultDateColor
         selectedDateCircleColor = attr.selectedDateCircleColor
@@ -234,6 +240,13 @@ class CustomDateView @JvmOverloads constructor(
         setOnClickListener(mViewClickListener)
     }
 
+    
+    override fun setTodayDateCircle(date: String) {
+        val drawable = ContextCompat.getDrawable(context, drawable.green_circle)
+        drawable?.colorFilter = PorterDuffColorFilter(todayCircleColor, filterMode)
+        tvDate.background = drawable
+        tvDate.setTextColor(todayTextColor)
+    }
     companion object {
         private const val MARGIN_RIGHT = 20
         private const val MARGIN_LEFT = 20

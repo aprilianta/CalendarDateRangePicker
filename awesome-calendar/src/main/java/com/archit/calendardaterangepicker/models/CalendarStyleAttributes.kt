@@ -46,6 +46,9 @@ interface CalendarStyleAttributes {
     var isEditable: Boolean
     var dateSelectionMode: DateSelectionMode
     var fixedDaysSelectionNumber: Int
+    var showTodayCircle: Boolean
+    var todayCircleColor: Int
+    var todayTextColor: Int
 
     companion object {
         const val DEFAULT_FIXED_DAYS_SELECTION = 7

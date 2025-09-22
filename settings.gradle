@@ -1,1 +1,22 @@
-include ':app', ':awesome-calendar'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) // strict (recommended)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+
+rootProject.name = "CalendarDateRangePicker"
+
+// Only include the library; skip demo app to avoid the D8 crash
+include(":app")
+include(":awesome-calendar")

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- fill warna hari ini -->
+    <solid android:color="@color/selected_date_circle_color_app"/>
+    <!-- atau kalau mau hanya garis, ubah ke transparent + stroke -->
+    <!-- <solid android:color="@android:color/transparent"/> -->
+    <!-- <stroke android:width="2dp" android:color="?attr/colorPrimary"/> -->
+</shape>

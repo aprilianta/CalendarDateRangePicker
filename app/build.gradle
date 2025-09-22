@@ -21,11 +21,15 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    kotlinOptions { jvmTarget = "11" }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     namespace 'com.archit.calendardaterangepickerdemo'
+    kotlin {
+        jvmToolchain(11)
+    }
 }
 
 dependencies {
@@ -35,8 +39,9 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation "androidx.core:core-ktx:1.9.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-//    implementation project(':awesome-calendar')
-    implementation 'io.github.architshah248.calendar:awesome-calendar:2.0.0'
+    //implementation project(':awesome-calendar')
+    //implementation(project(":calendardaterangepicker"))
+    implementation project(':awesome-calendar')
 
     testImplementation 'junit:junit:4.13.2'
 
@@ -46,6 +51,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test:rules:1.5.0'
 }
+/*
 repositories {
     mavenCentral()
-}
+}*/

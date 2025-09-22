@@ -30,6 +30,8 @@ class DateRangeCalendarView : LinearLayout, DateRangeCalendarViewApi {
     private lateinit var vpCalendar: ViewPager
     private lateinit var calendarStyleAttr: CalendarStyleAttributes
     private lateinit var mDateRangeCalendarManager: CalendarDateRangeManagerImpl
+    private var currentVisibleStart: Calendar? = null
+    private var currentVisibleEnd: Calendar? = null
 
     constructor(context: Context) : super(context) {
         initViews(context, null)
@@ -41,6 +43,16 @@ class DateRangeCalendarView : LinearLayout, DateRangeCalendarViewApi {
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         initViews(context, attrs)
+    }
+
+    interface EdgeListener {
+        fun onReachedStartEdge(currentStart: Calendar) {}
+        fun onReachedEndEdge(currentEnd: Calendar) {}
+    }
+
+    private var edgeListener: EdgeListener? = null
+    fun setEdgeListener(listener: EdgeListener?) {
+        edgeListener = listener
     }
 
     private fun initViews(context: Context, attrs: AttributeSet?) {
@@ -74,6 +86,13 @@ class DateRangeCalendarView : LinearLayout, DateRangeCalendarViewApi {
             override fun onPageSelected(position: Int) {
                 setCalendarYearTitle(position)
                 setNavigationHeader(position)
+                val lastIndex = vpCalendar.adapter?.count?.minus(1) ?: return
+                if (position == 0) {
+                    edgeListener?.onReachedStartEdge(currentVisibleStart?.clone() as Calendar)
+                } else if (position == lastIndex) {
+                    edgeListener?.onReachedEndEdge(currentVisibleEnd?.clone() as Calendar)
+                }
+
             }
 
             override fun onPageScrollStateChanged(state: Int) = Unit
@@ -238,6 +257,20 @@ class DateRangeCalendarView : LinearLayout, DateRangeCalendarViewApi {
         setNavigationHeader(0)
     }
 
+    fun setSafeVisibleMonthRange(start: Calendar, end: Calendar, maxSpan: Int = 30) {
+        // Clamp to 30 months (same as I showed before)
+        val span = monthsBetween(start, end)
+
+        val clampedEnd = if (span > maxSpan) {
+            (start.clone() as Calendar).apply { add(Calendar.MONTH, maxSpan) }
+        } else end
+
+        setVisibleMonthRange(start, clampedEnd)
+
+        currentVisibleStart = start.clone() as Calendar
+        currentVisibleEnd = clampedEnd.clone() as Calendar
+    }
+
     /**
      * To set current visible month.
      *
@@ -265,7 +298,11 @@ class DateRangeCalendarView : LinearLayout, DateRangeCalendarViewApi {
         adapterEventCalendarMonths.invalidateCalendar()
     }
 
+    private fun monthsBetween(a: Calendar, b: Calendar): Int =
+        (b.get(Calendar.YEAR) - a.get(Calendar.YEAR)) * 12 +
+                (b.get(Calendar.MONTH) - a.get(Calendar.MONTH))
+
     companion object {
-        private const val TOTAL_ALLOWED_MONTHS = 30
+        private const val TOTAL_ALLOWED_MONTHS = 120
     }
 }

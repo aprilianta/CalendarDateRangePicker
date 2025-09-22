@@ -45,6 +45,7 @@ internal class DateRangeMonthView : LinearLayout {
     private lateinit var calendarStyleAttr: CalendarStyleAttributes
     private var calendarListener: CalendarListener? = null
     private lateinit var dateRangeCalendarManager: CalendarDateRangeManager
+    private lateinit var todayDate: Calendar
 
     private val mOnDateClickListener: OnDateClickListener = object : OnDateClickListener {
         override fun onDateClicked(view: View, selectedDate: Calendar) {
@@ -105,6 +106,7 @@ internal class DateRangeMonthView : LinearLayout {
         val mainView = layoutInflater.inflate(layout.layout_calendar_month, this, true) as LinearLayout
         llDaysContainer = mainView.findViewById(R.id.llDaysContainer)
         llTitleWeekContainer = mainView.findViewById(R.id.llTitleWeekContainer)
+        todayDate = getTodayDate()
     }
 
     private fun setSelectedDate(selectedDate: Calendar) {
@@ -214,6 +216,7 @@ internal class DateRangeMonthView : LinearLayout {
      * @param date       - Calendar obj of specific date of the month.
      */
     private fun drawDayContainer(customDateView: CustomDateView, date: Calendar) {
+        val dateTime = date.time
         customDateView.setDateText(date[Calendar.DATE].toString())
         customDateView.setDateStyleAttributes(calendarStyleAttr)
         customDateView.setDateClickListener(mOnDateClickListener)
@@ -240,6 +243,20 @@ internal class DateRangeMonthView : LinearLayout {
         }
         customDateView.updateDateBackground(dateState)
         customDateView.tag = getContainerKey(date)
+        if (calendarStyleAttr.showTodayCircle && isDateSame(date, todayDate)) {
+            customDateView.setTodayDateCircle(dateTime.toString())
+            customDateView.updateDateBackground(dateState)
+            customDateView.tag = getContainerKey(date)
+            if (calendarStyleAttr.showTodayCircle && isDateSame(date, todayDate)) {
+                customDateView.setTodayDateCircle(date.time.toString())
+                when (dateState) {
+                    DateState.START_END_SAME, START, END -> {
+                        customDateView.updateDateBackground(dateState)
+                    }
+                    else -> {}
+                }
+            }
+        }
     }
 
     /**
@@ -260,6 +277,16 @@ internal class DateRangeMonthView : LinearLayout {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, calendarStyleAttr.textSizeWeek)
             textView.setTextColor(calendarStyleAttr.weekColor)
         }
+    }
+
+    private fun getTodayDate(): Calendar {
+        val today = Calendar.getInstance()
+        today.set(Calendar.HOUR_OF_DAY, 0)
+        today.set(Calendar.SECOND, 0)
+        today.set(Calendar.MILLISECOND, 0)
+        today.set(Calendar.MINUTE, 0)
+
+        return today
     }
 
     companion object {

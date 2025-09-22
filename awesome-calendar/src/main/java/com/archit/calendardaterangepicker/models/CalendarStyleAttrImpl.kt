@@ -37,6 +37,11 @@ class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null
     override var textSizeDate = context.resources.getDimension(R.dimen.text_size_date)
         private set
     override var isShouldEnabledTime = false
+    override var showTodayCircle: Boolean = true
+
+    override var todayCircleColor: Int = ContextCompat.getColor(context, R.color.selected_date_circle_color)
+    override var todayTextColor: Int = ContextCompat.getColor(context, R.color.selected_date_color)
+
 
     /**
      * To set week offset.
@@ -94,6 +99,9 @@ class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null
                 weekOffset = ta.getColor(R.styleable.DateRangeMonthView_week_offset, 0)
                 dateSelectionMode =
                     DateSelectionMode.values()[ta.getInt(R.styleable.DateRangeMonthView_date_selection_mode, 0)]
+                showTodayCircle = ta.getBoolean(R.styleable.DateRangeMonthView_show_today_circle, true)
+                todayCircleColor = ta.getColor(R.styleable.DateRangeMonthView_today_circle_color, todayCircleColor)
+                todayTextColor = ta.getColor(R.styleable.DateRangeMonthView_today_text_color, todayTextColor)
             } finally {
                 ta.recycle()
             }
