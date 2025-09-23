@@ -6,7 +6,7 @@
         android:id="@+id/viewStrip"
         style="@style/StripRange" />
 
-    <com.calendar.calendar.customviews.CustomTextView
+    <com.aprilianta.customviews.CustomTextView
         android:id="@+id/dayOfMonthText"
         style="@style/DayOfMonthStyle"
         android:text="0" />

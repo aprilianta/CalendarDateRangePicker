@@ -8,9 +8,9 @@ import androidx.test.espresso.matcher.ViewMatchers.Visibility.INVISIBLE
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
-import com.calendar.calendar.customviews.DateRangeCalendarView
-import com.calendar.calendar.customviews.DateView
-import com.calendar.calendar.customviews.isDateSame
+import com.aprilianta.customviews.DateRangeCalendarView
+import com.aprilianta.customviews.DateView
+import com.aprilianta.customviews.isDateSame
 import com.calendar.calendardaterangepickerdemo.MainActivity
 import com.calendar.calendardaterangepickerdemo.R
 import org.junit.Assert

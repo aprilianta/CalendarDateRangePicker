@@ -46,8 +46,8 @@ For Maven:
 ```xml
 <dependency>
     <groupId>io.github.aprilianta.CalendarDateRangePicker</groupId>
-    <artifactId>awesome-calendar-todaycircle</artifactId>
-    <version>2.0.2</version>
+    <artifactId>calendar-daterange</artifactId>
+    <version>2.0.3</version>
 </dependency>
 ```
 

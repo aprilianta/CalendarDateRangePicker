@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.aprilianta"
-version = "2.0.2"
+version = "2.0.3"
 
 android {
     namespace = "io.github.aprilianta.calendar"
@@ -91,9 +91,9 @@ afterEvaluate {
         publications {
             create("release", MavenPublication) {
                 from components.release
-                artifactId = "awesome-calendar-todaycircle"
+                artifactId = "calendar-daterange"
                 pom {
-                    name.set("awesome-calendar-todaycircle")
+                    name.set("calendar-daterange")
                     description.set("Fork of Archit Calendar with Today Circle")
                     url.set("https://github.com/aprilianta/CalendarDateRangePicker")
                     licenses {

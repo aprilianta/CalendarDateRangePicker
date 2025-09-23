@@ -1,8 +1,8 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
 import android.graphics.Typeface
 import android.view.View
-import com.calendar.calendar.models.CalendarStyleAttributes
+import com.aprilianta.models.CalendarStyleAttributes
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

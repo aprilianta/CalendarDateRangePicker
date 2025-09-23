@@ -1,4 +1,4 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
 import android.content.Context
 import android.graphics.Color
@@ -13,17 +13,17 @@ import android.view.View.OnClickListener
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import io.github.aprilianta.calendar.R.*
-import com.calendar.calendar.customviews.DateView.DateState
-import com.calendar.calendar.customviews.DateView.DateState.DISABLE
-import com.calendar.calendar.customviews.DateView.DateState.END
-import com.calendar.calendar.customviews.DateView.DateState.HIDDEN
-import com.calendar.calendar.customviews.DateView.DateState.MIDDLE
-import com.calendar.calendar.customviews.DateView.DateState.SELECTABLE
-import com.calendar.calendar.customviews.DateView.DateState.START
-import com.calendar.calendar.customviews.DateView.DateState.START_END_SAME
-import com.calendar.calendar.customviews.DateView.OnDateClickListener
-import com.calendar.calendar.models.CalendarStyleAttrImpl
-import com.calendar.calendar.models.CalendarStyleAttributes
+import com.aprilianta.customviews.DateView.DateState
+import com.aprilianta.customviews.DateView.DateState.DISABLE
+import com.aprilianta.customviews.DateView.DateState.END
+import com.aprilianta.customviews.DateView.DateState.HIDDEN
+import com.aprilianta.customviews.DateView.DateState.MIDDLE
+import com.aprilianta.customviews.DateView.DateState.SELECTABLE
+import com.aprilianta.customviews.DateView.DateState.START
+import com.aprilianta.customviews.DateView.DateState.START_END_SAME
+import com.aprilianta.customviews.DateView.OnDateClickListener
+import com.aprilianta.models.CalendarStyleAttrImpl
+import com.aprilianta.models.CalendarStyleAttributes
 import io.github.aprilianta.calendar.R
 import java.text.ParseException
 import java.text.SimpleDateFormat

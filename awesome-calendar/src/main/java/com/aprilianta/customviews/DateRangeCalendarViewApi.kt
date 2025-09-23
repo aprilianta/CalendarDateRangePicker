@@ -1,4 +1,4 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable

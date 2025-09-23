@@ -1,4 +1,4 @@
-package com.calendar.calendar.models
+package com.aprilianta.models
 
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable

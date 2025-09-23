@@ -1,4 +1,4 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
 import android.content.Context
 import android.os.Handler
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import io.github.aprilianta.calendar.R.*
-import com.calendar.calendar.models.CalendarStyleAttributes
+import com.aprilianta.models.CalendarStyleAttributes
 import java.util.Calendar
 
 internal class AdapterEventCalendarMonths(

@@ -9,12 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.calendar.calendardaterangepickerdemo.R;
-import com.calendar.calendar.customviews.CalendarListener;
-import com.calendar.calendar.customviews.DateRangeCalendarView;
+import com.aprilianta.customviews.CalendarListener;
+import com.aprilianta.customviews.DateRangeCalendarView;
 
 import java.util.Calendar;
 
-import static com.calendar.calendar.customviews.CalendarRangeUtilsKt.printDate;
+import static com.aprilianta.customviews.CalendarRangeUtilsKt.printDate;
 
 public class MainActivity extends AppCompatActivity {
 

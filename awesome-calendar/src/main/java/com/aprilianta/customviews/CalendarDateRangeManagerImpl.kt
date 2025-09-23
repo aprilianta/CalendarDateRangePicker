@@ -1,18 +1,18 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
 import android.util.Log
-import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState
-import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.IN_SELECTED_RANGE
-import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.LAST_DATE
-import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.START_DATE
-import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.START_END_SAME
-import com.calendar.calendar.customviews.CalendarDateRangeManager.DateSelectionState.UNKNOWN
-import com.calendar.calendar.models.CalendarStyleAttributes
-import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode
-import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
-import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
-import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.SINGLE
-import com.calendar.calendar.models.DateTiming
+import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState
+import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState.IN_SELECTED_RANGE
+import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState.LAST_DATE
+import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState.START_DATE
+import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState.START_END_SAME
+import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState.UNKNOWN
+import com.aprilianta.models.CalendarStyleAttributes
+import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode
+import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
+import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
+import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode.SINGLE
+import com.aprilianta.models.DateTiming
 import java.util.Calendar
 
 @Suppress("TooManyFunctions")

@@ -1,4 +1,4 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
 import android.content.Context
 import android.graphics.Typeface
@@ -13,8 +13,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import io.github.aprilianta.calendar.R.*
-import com.calendar.calendar.models.CalendarStyleAttrImpl
-import com.calendar.calendar.models.CalendarStyleAttributes
+import com.aprilianta.models.CalendarStyleAttrImpl
+import com.aprilianta.models.CalendarStyleAttributes
 import io.github.aprilianta.calendar.R
 import java.text.DateFormatSymbols
 import java.util.Calendar

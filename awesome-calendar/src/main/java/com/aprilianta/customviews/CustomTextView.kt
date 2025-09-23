@@ -1,4 +1,4 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
 import android.content.Context
 import android.util.AttributeSet

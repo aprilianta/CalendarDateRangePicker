@@ -14,7 +14,7 @@
         android:layout_centerVertical="true"
         android:src="@drawable/ic_right_selector" />
 
-    <com.calendar.calendar.customviews.CustomTextView
+    <com.aprilianta.customviews.CustomTextView
         android:id="@+id/tvYearTitle"
         android:layout_width="match_parent"
         android:gravity="center"

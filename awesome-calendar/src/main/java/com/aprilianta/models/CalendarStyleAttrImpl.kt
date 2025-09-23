@@ -1,4 +1,4 @@
-package com.calendar.calendar.models
+package com.aprilianta.models
 
 import android.content.Context
 import android.graphics.Typeface
@@ -6,10 +6,10 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
 import io.github.aprilianta.calendar.R.*
-import com.calendar.calendar.models.CalendarStyleAttributes.Companion.DEFAULT_FIXED_DAYS_SELECTION
-import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode
-import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
-import com.calendar.calendar.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
+import com.aprilianta.models.CalendarStyleAttributes.Companion.DEFAULT_FIXED_DAYS_SELECTION
+import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode
+import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
+import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
 import io.github.aprilianta.calendar.R
 
 class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null) :

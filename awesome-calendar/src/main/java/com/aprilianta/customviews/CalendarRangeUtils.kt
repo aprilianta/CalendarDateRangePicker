@@ -1,6 +1,6 @@
-package com.calendar.calendar.customviews
+package com.aprilianta.customviews
 
-import com.calendar.calendar.models.DateTiming
+import com.aprilianta.models.DateTiming
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

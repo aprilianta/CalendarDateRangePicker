@@ -5,7 +5,7 @@ import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.matcher.ViewMatchers
 import io.github.aprilianta.calendar.R.id
-import com.calendar.calendar.customviews.CustomDateView
+import com.aprilianta.customviews.CustomDateView
 import org.hamcrest.BaseMatcher
 import org.hamcrest.Description
 import java.util.Calendar

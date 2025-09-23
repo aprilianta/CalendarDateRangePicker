@@ -1,4 +1,4 @@
-package com.calendar.calendar.models
+package com.aprilianta.models
 
 internal enum class DateTiming {
     NONE,
