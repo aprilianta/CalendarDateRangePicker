@@ -40,7 +40,7 @@ dependencies {
     implementation "androidx.core:core-ktx:1.9.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //implementation project(':awesome-calendar')
-    //implementation(project(":oo.github.aprilianta.calendar"))
+    //implementation(project(":io.github.aprilianta.calendar"))
     implementation project(':awesome-calendar')
 
     testImplementation 'junit:junit:4.13.2'
