@@ -19,6 +19,10 @@
         <attr name="week_offset" format="integer" />
         <attr name="editable" format="boolean" />
         <attr name="show_today_circle" format="boolean"/>
+        <attr name="today_circle_style" format="enum">
+            <enum name="solid" value="0"/>
+            <enum name="outline" value="1"/>
+        </attr>
         <attr name="today_circle_color" format="color"/>
         <attr name="today_text_color" format="color"/>
         <attr name="date_selection_mode" format="enum">

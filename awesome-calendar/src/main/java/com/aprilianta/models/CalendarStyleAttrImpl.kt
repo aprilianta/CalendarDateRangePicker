@@ -40,7 +40,7 @@ class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null
         private set
     override var isShouldEnabledTime = false
     override var showTodayCircle: Boolean = true
-
+    override var todayCircleStyle: Int = 0
     override var todayCircleColor: Int = ContextCompat.getColor(context, R.color.selected_date_circle_color)
     override var todayTextColor: Int = ContextCompat.getColor(context, R.color.selected_date_color)
 
@@ -102,6 +102,7 @@ class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null
                 dateSelectionMode =
                     DateSelectionMode.values()[ta.getInt(R.styleable.DateRangeMonthView_date_selection_mode, 0)]
                 showTodayCircle = ta.getBoolean(R.styleable.DateRangeMonthView_show_today_circle, true)
+                todayCircleStyle = ta.getInt(R.styleable.DateRangeMonthView_today_circle_style, 0)
                 todayCircleColor = ta.getColor(R.styleable.DateRangeMonthView_today_circle_color, todayCircleColor)
                 todayTextColor = ta.getColor(R.styleable.DateRangeMonthView_today_text_color, todayTextColor)
             } finally {

@@ -48,6 +48,7 @@ interface CalendarStyleAttributes {
     var fixedDaysSelectionNumber: Int
     var showTodayCircle: Boolean
     var todayCircleColor: Int
+    var todayCircleStyle: Int
     var todayTextColor: Int
 
     companion object {

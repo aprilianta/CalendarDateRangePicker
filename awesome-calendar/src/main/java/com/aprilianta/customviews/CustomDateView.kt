@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.PorterDuff.Mode.SRC_IN
 import android.graphics.PorterDuffColorFilter
 import android.graphics.Typeface
+import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -30,6 +31,8 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+import kotlin.math.max
+import kotlin.math.roundToInt
 
 @Suppress("TooManyFunctions")
 class CustomDateView @JvmOverloads constructor(
@@ -65,6 +68,7 @@ class CustomDateView @JvmOverloads constructor(
     override var selectedDateColor: Int = defCalendarStyleAttr.selectedDateColor
     override var rangeDateColor: Int = defCalendarStyleAttr.rangeDateColor
     private var todayCircleColor: Int = defCalendarStyleAttr.selectedDateCircleColor
+    private var todayCircleStyle: Int = defCalendarStyleAttr.todayCircleStyle
     private var todayTextColor: Int = defCalendarStyleAttr.selectedDateColor
     override var stripColor: Int = defCalendarStyleAttr.rangeStripColor
 
@@ -91,6 +95,7 @@ class CustomDateView @JvmOverloads constructor(
         if (attr is CalendarStyleAttrImpl) {
             todayCircleColor = attr.todayCircleColor
             todayTextColor = attr.todayTextColor
+            todayCircleStyle = attr.todayCircleStyle
         }
         disableDateColor = attr.disableDateColor
         defaultDateColor = attr.defaultDateColor
@@ -240,12 +245,30 @@ class CustomDateView @JvmOverloads constructor(
         setOnClickListener(mViewClickListener)
     }
 
+    private fun Int.dp() = (this * (tvDate.resources.displayMetrics.density)).roundToInt()
     
     override fun setTodayDateCircle(date: String) {
-        val drawable = ContextCompat.getDrawable(context, drawable.green_circle)
-        drawable?.colorFilter = PorterDuffColorFilter(todayCircleColor, filterMode)
-        tvDate.background = drawable
-        tvDate.setTextColor(todayTextColor)
+        if (todayCircleStyle == 1) {
+            // OUTLINE
+            val strokePx = 2.dp()
+            val bg = (ContextCompat.getDrawable(context, R.drawable.bg_today_outline)?.mutate() as? GradientDrawable) ?: GradientDrawable().apply { shape = GradientDrawable.OVAL }
+
+            bg.setColor(Color.WHITE) // or Color.TRANSPARENT
+            bg.setStroke(strokePx, todayCircleColor)
+            tvDate.background = bg
+            tvDate.setTextColor(todayTextColor)
+
+            val size = max(tvDate.width, tvDate.height).coerceAtLeast(tvDate.textSize.toInt())
+            val pad = (size * 0.14f).roundToInt()
+            tvDate.setPadding(pad, pad, pad, pad)
+
+        } else {
+            // SOLID
+            val drawable = ContextCompat.getDrawable(context, drawable.green_circle)
+            drawable?.colorFilter = PorterDuffColorFilter(todayCircleColor, filterMode)
+            tvDate.background = drawable
+            tvDate.setTextColor(todayTextColor)
+        }
     }
     companion object {
         private const val MARGIN_RIGHT = 20
