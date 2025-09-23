@@ -37,7 +37,7 @@ For Gradle:
 Add following line to App level gradle:
 ```
 dependencies {
-    implementation 'io.github.aprilianta.CalendarDateRangePicker:[version]'
+    implementation 'com.github.aprilianta.CalendarDateRangePicker:[version]'
 }
 ```
 
@@ -45,7 +45,7 @@ dependencies {
 For Maven:
 ```xml
 <dependency>
-    <groupId>io.github.aprilianta.CalendarDateRangePicker</groupId>
+    <groupId>com.github.aprilianta.CalendarDateRangePicker</groupId>
     <artifactId>calendar-daterange</artifactId>
     <version>2.0.3</version>
 </dependency>
