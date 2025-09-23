@@ -47,7 +47,7 @@ For Maven:
 <dependency>
     <groupId>com.github.aprilianta.CalendarDateRangePicker</groupId>
     <artifactId>calendar-daterange</artifactId>
-    <version>2.0.3</version>
+    <version>2.0.4</version>
 </dependency>
 ```
 
