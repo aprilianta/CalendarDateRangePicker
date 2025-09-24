@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.aprilianta"
-version = "2.0.4"
+version = "2.0.5"
 
 android {
     namespace = "io.github.aprilianta.calendar"
