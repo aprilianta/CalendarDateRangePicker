@@ -3,6 +3,7 @@ package com.aprilianta.models
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
+import java.util.Locale
 
 interface CalendarStyleAttributes {
 
@@ -46,6 +47,7 @@ interface CalendarStyleAttributes {
     var isEditable: Boolean
     var dateSelectionMode: DateSelectionMode
     var fixedDaysSelectionNumber: Int
+    var locale: Locale
     var showTodayCircle: Boolean
     var todayCircleColor: Int
     var todayCircleStyle: Int

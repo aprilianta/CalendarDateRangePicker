@@ -8,7 +8,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.calendar.calendardaterangepickerdemo.R;
 import com.aprilianta.customviews.CalendarListener;
 import com.aprilianta.customviews.DateRangeCalendarView;
 

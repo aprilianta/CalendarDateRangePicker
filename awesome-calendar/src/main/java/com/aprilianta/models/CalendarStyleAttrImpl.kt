@@ -5,12 +5,14 @@ import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
+import com.aprilianta.LocaleCompat
 import io.github.aprilianta.calendar.R.*
 import com.aprilianta.models.CalendarStyleAttributes.Companion.DEFAULT_FIXED_DAYS_SELECTION
 import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode
 import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode.FIXED_RANGE
 import com.aprilianta.models.CalendarStyleAttributes.DateSelectionMode.FREE_RANGE
 import io.github.aprilianta.calendar.R
+import java.util.Locale
 
 class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null) :
     CalendarStyleAttributes {
@@ -38,6 +40,7 @@ class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null
         private set
     override var textSizeDate = context.resources.getDimension(R.dimen.text_size_date)
         private set
+    override var locale: Locale = Locale.getDefault()
     override var isShouldEnabledTime = false
     override var showTodayCircle: Boolean = true
     override var todayCircleStyle: Int = 0
@@ -105,6 +108,10 @@ class CalendarStyleAttrImpl(context: Context, attributeSet: AttributeSet? = null
                 todayCircleStyle = ta.getInt(R.styleable.DateRangeMonthView_today_circle_style, 0)
                 todayCircleColor = ta.getColor(R.styleable.DateRangeMonthView_today_circle_color, todayCircleColor)
                 todayTextColor = ta.getColor(R.styleable.DateRangeMonthView_today_text_color, todayTextColor)
+                val tag = ta.getString(R.styleable.DateRangeMonthView_locale_tag)
+                if (!tag.isNullOrBlank()) {
+                    locale = LocaleCompat.forLanguageTagCompat(tag)
+                }
             } finally {
                 ta.recycle()
             }

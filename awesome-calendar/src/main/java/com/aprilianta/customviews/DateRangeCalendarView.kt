@@ -7,11 +7,14 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.aprilianta.LocaleCompat
+import com.aprilianta.forEachDescendant
 import io.github.aprilianta.calendar.R.*
 import com.aprilianta.models.CalendarStyleAttrImpl
 import com.aprilianta.models.CalendarStyleAttributes
@@ -56,8 +59,12 @@ class DateRangeCalendarView : LinearLayout, DateRangeCalendarViewApi {
     }
 
     private fun initViews(context: Context, attrs: AttributeSet?) {
-        locale = context.resources.configuration.locale
         calendarStyleAttr = CalendarStyleAttrImpl(context, attrs)
+        locale = if (calendarStyleAttr.locale != null) {
+            calendarStyleAttr.locale
+        } else {
+            if (appLocale != null) appLocale else context.resources.configuration.locale
+        }
         val layoutInflater = LayoutInflater.from(context)
         layoutInflater.inflate(layout.layout_calendar_container, this, true)
         val rlHeaderCalendar = findViewById<RelativeLayout>(R.id.rlHeaderCalendar)
@@ -301,6 +308,30 @@ class DateRangeCalendarView : LinearLayout, DateRangeCalendarViewApi {
     private fun monthsBetween(a: Calendar, b: Calendar): Int =
         (b.get(Calendar.YEAR) - a.get(Calendar.YEAR)) * 12 +
                 (b.get(Calendar.MONTH) - a.get(Calendar.MONTH))
+
+    fun setLocale(locale: Locale) {
+        calendarStyleAttr.locale = locale
+        if (this is ViewGroup) {
+            (this as ViewGroup).forEachDescendant { v ->
+                if (v is DateRangeMonthView) v.setLocale(locale)
+            }
+        }
+
+        // kalau perlu re-draw semua
+        requestLayout()
+        invalidate()
+    }
+
+    fun setLocaleTag(tag: String) {
+        setLocale(LocaleCompat.forLanguageTagCompat(tag))
+    }
+
+    val appLocale = run {
+        val appLocales = androidx.appcompat.app.AppCompatDelegate.getApplicationLocales()
+        if (!appLocales.isEmpty) appLocales[0]
+        else if (android.os.Build.VERSION.SDK_INT >= 24) resources.configuration.locales[0]
+        else @Suppress("DEPRECATION") resources.configuration.locale
+    }
 
     companion object {
         private const val TOTAL_ALLOWED_MONTHS = 120

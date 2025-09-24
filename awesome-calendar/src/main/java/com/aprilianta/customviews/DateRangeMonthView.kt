@@ -9,6 +9,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.TextView
 import io.github.aprilianta.calendar.R.*
 import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState.IN_SELECTED_RANGE
 import com.aprilianta.customviews.CalendarDateRangeManager.DateSelectionState.LAST_DATE
@@ -31,7 +32,10 @@ import com.aprilianta.models.DateTiming
 import com.aprilianta.timepicker.AwesomeTimePickerDialog
 import com.aprilianta.timepicker.AwesomeTimePickerDialog.TimePickerCallback
 import io.github.aprilianta.calendar.R
+import java.text.DateFormatSymbols
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 /**
  * Created by archit.shah on 08/09/2017.
@@ -44,6 +48,9 @@ internal class DateRangeMonthView : LinearLayout {
     private var calendarListener: CalendarListener? = null
     private lateinit var dateRangeCalendarManager: CalendarDateRangeManager
     private lateinit var todayDate: Calendar
+    private lateinit var locale: Locale
+    private lateinit var weekHeaderViews: List<TextView>
+    private lateinit var monthTitleView: TextView
 
     private val mOnDateClickListener: OnDateClickListener = object : OnDateClickListener {
         override fun onDateClicked(view: View, selectedDate: Calendar) {
@@ -105,6 +112,7 @@ internal class DateRangeMonthView : LinearLayout {
         llDaysContainer = mainView.findViewById(R.id.llDaysContainer)
         llTitleWeekContainer = mainView.findViewById(R.id.llTitleWeekContainer)
         todayDate = getTodayDate()
+        initHeaderRefs(mainView)
     }
 
     private fun setSelectedDate(selectedDate: Calendar) {
@@ -167,6 +175,7 @@ internal class DateRangeMonthView : LinearLayout {
         dateRangeCalendarManager: CalendarDateRangeManager,
     ) {
         this.calendarStyleAttr = calendarStyleAttr
+        locale = calendarStyleAttr.locale
         currentCalendarMonth = month.clone() as Calendar
         this.dateRangeCalendarManager = dateRangeCalendarManager
         drawCalendarForMonth(currentCalendarMonth)
@@ -182,14 +191,20 @@ internal class DateRangeMonthView : LinearLayout {
         currentCalendarMonth = month.clone() as Calendar
         currentCalendarMonth[Calendar.DATE] = 1
         resetTime(currentCalendarMonth, DateTiming.NONE)
-        val weekTitle = context.resources.getStringArray(array.week_sun_sat)
+        /*val weekTitle = context.resources.getStringArray(array.week_sun_sat)
 
         //To set week day title as per offset
         for (i in 0 until TOTAL_DAYS_IN_A_WEEK) {
             val textView = llTitleWeekContainer.getChildAt(i) as CustomTextView
             val weekStr = weekTitle[(i + calendarStyleAttr.weekOffset) % TOTAL_DAYS_IN_A_WEEK]
             textView.text = weekStr
-        }
+        }*/
+
+        // customized
+        if (!::locale.isInitialized) locale = Locale.getDefault()
+        applyWeekdayLabels()
+        updateMonthTitle(currentCalendarMonth)
+
         var startDay = month[Calendar.DAY_OF_WEEK] - calendarStyleAttr.weekOffset
 
         //To rotate week day according to offset
@@ -285,6 +300,42 @@ internal class DateRangeMonthView : LinearLayout {
         today.set(Calendar.MINUTE, 0)
 
         return today
+    }
+
+    /** Rotasi label sesuai weekOffset (0=Sun, 1=Mon, dst). */
+    private fun weekdayLabels(locale: Locale, weekOffset: Int): List<String> {
+        val dfs = DateFormatSymbols(locale)
+        val base = listOf(
+            dfs.shortWeekdays[1], dfs.shortWeekdays[2], dfs.shortWeekdays[3],
+            dfs.shortWeekdays[4], dfs.shortWeekdays[5], dfs.shortWeekdays[6], dfs.shortWeekdays[7]
+        ).map { it.replace(".", "") }
+        val off = ((weekOffset % 7) + 7) % 7
+        return (0..6).map { base[(it + off) % 7] }
+    }
+
+    private fun applyWeekdayLabels() {
+        val labels = weekdayLabels(locale, calendarStyleAttr.weekOffset)
+        weekHeaderViews.forEachIndexed { i, tv -> tv.text = labels[i] }
+    }
+
+    private fun updateMonthTitle(currentMonth: Calendar) {
+        val fmt = SimpleDateFormat("MMMM yyyy", locale)
+        monthTitleView.text = fmt.format(currentMonth.time)
+    }
+
+    fun setLocale(newLocale: Locale) {
+        locale = newLocale
+        calendarStyleAttr.locale = newLocale
+        applyWeekdayLabels()
+        updateMonthTitle(currentCalendarMonth)
+        invalidate()
+    }
+
+    private fun initHeaderRefs(root: LinearLayout) {
+        monthTitleView = root.findViewById(R.id.dayOfMonthText)
+        weekHeaderViews = (0 until llTitleWeekContainer.childCount).map { i ->
+            llTitleWeekContainer.getChildAt(i) as TextView
+        }
     }
 
     companion object {

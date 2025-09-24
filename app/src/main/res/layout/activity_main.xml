@@ -32,7 +32,7 @@
             custom:show_today_circle="true"
             custom:today_circle_style="outline"
             custom:today_text_color="#000"
-
+            custom:locale_tag="id-ID"
             custom:week_offset="0">
 
         </com.aprilianta.customviews.DateRangeCalendarView>
